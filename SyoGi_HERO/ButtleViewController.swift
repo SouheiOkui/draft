@@ -9,12 +9,13 @@
 import UIKit
 
 class ButtleViewController: UIViewController {
-    var boardMatrix:[[Int]] = [[0,2,0],[0,0,0],[1,1,1],[3,5,4],[0,0,0],[0,0,0],[0,0,0],[0,0,0]]
+    var boardMatrix:[[Int]] = [[0,2,0],[0,0,0],[1,1,1],[3,5,4],[0,0,0],[-1,-1,-1],[0,0,0],[0,-2,0]]
     var possibleMatrix:[[Int]] = [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0]]
     var lastCallX : Int = -1
     var lastCallY : Int = -1
     
     var komaImageIndex:[String] = ["hu.png","king.png","gold.png","silva.png","hose.png","kyo.png","to.png"]
+    var r_komaImageIndex:[String] = ["r_hu.png","r_king.png","gold.png","silva.png","hose.png","kyo.png","to.png"]
     
     @IBOutlet var buttns1 : UIButton!
     @IBOutlet var buttns2 : UIButton!
@@ -557,6 +558,112 @@ class ButtleViewController: UIViewController {
             else if boardMatrix[7][1] == 0 {komaImg23.image = UIImage(named : "koma2.png")}
             if boardMatrix[7][2] >= 1 && boardMatrix[7][2] == x+1 {
                 komaImg24.image = UIImage(named : komaImageIndex[x])
+            }
+            else if boardMatrix[7][2] == 0 {komaImg24.image = UIImage(named : "koma2.png")}
+            //----
+        }
+        for x in -2 ... -1{//駒が追加されたらこのfar文も長くする
+            if boardMatrix[0][0] == x {
+                komaImg1.image = UIImage(named : r_komaImageIndex[(x * -1) - 1])
+            }
+            else if boardMatrix[0][0] == 0 {komaImg1.image = UIImage(named : "koma2.png")}
+            if boardMatrix[0][1] == x {
+                komaImg2.image = UIImage(named : r_komaImageIndex[(x * -1) - 1])
+            }
+            else if boardMatrix[0][1] == 0 {komaImg2.image = UIImage(named : "koma2.png")}
+            if boardMatrix[0][2] == x {
+                komaImg3.image = UIImage(named : r_komaImageIndex[(x * -1) - 1])
+            }
+            else if boardMatrix[0][2] == 0 {komaImg3.image = UIImage(named : "koma2.png")}
+            //----
+            if boardMatrix[1][0] == x {
+                komaImg4.image = UIImage(named : r_komaImageIndex[(x * -1) - 1])
+            }
+            else if boardMatrix[1][0] == 0 {komaImg4.image = UIImage(named : "koma2.png")}
+            if boardMatrix[1][1] == x {
+                komaImg5.image = UIImage(named : r_komaImageIndex[(x * -1) - 1])
+            }
+            else if boardMatrix[1][1] == 0 {komaImg5.image = UIImage(named : "koma2.png")}
+            if boardMatrix[1][2] == x {
+                komaImg6.image = UIImage(named : r_komaImageIndex[(x * -1) - 1])
+            }
+            else if boardMatrix[1][2] == 0 {komaImg6.image = UIImage(named : "koma2.png")}
+            //---
+            if boardMatrix[2][0] == x {
+                komaImg7.image = UIImage(named : r_komaImageIndex[(x * -1) - 1])
+            }
+            else if boardMatrix[2][0] == 0 {komaImg7.image = UIImage(named : "koma2.png")}
+            if boardMatrix[2][1] == x {
+                komaImg8.image = UIImage(named : r_komaImageIndex[(x * -1) - 1])
+            }
+            else if boardMatrix[2][1] == 0 {komaImg8.image = UIImage(named : "koma2.png")}
+            if boardMatrix[2][2] == x {
+                komaImg9.image = UIImage(named : r_komaImageIndex[(x * -1) - 1])
+            }
+            else if boardMatrix[2][2] == 0 {komaImg9.image = UIImage(named : "koma2.png")}
+            //---
+            if boardMatrix[3][0] == x {
+                komaImg10.image = UIImage(named : r_komaImageIndex[(x * -1) - 1])
+            }
+            else if boardMatrix[3][0] == 0 {komaImg10.image = UIImage(named : "koma2.png")}
+            if  boardMatrix[3][1] == x {
+                komaImg11.image = UIImage(named : r_komaImageIndex[(x * -1) - 1])
+            }
+            else if boardMatrix[3][1] == 0 {komaImg11.image = UIImage(named : "koma2.png")}
+            if  boardMatrix[3][2] == x {
+                komaImg12.image = UIImage(named : r_komaImageIndex[(x * -1) - 1])
+            }
+            else if boardMatrix[3][2] == 0 {komaImg12.image = UIImage(named : "koma2.png")}
+            //----
+            if boardMatrix[4][0] == x {
+                komaImg13.image = UIImage(named : r_komaImageIndex[(x * -1) - 1])
+            }
+            else if boardMatrix[4][0] == 0 {komaImg13.image = UIImage(named : "koma2.png")}
+            if boardMatrix[4][1] == x {
+                komaImg14.image = UIImage(named : r_komaImageIndex[(x * -1) - 1])
+            }
+            else if boardMatrix[4][1] == 0 {komaImg14.image = UIImage(named : "koma2.png")}
+            if  boardMatrix[4][2] == x {
+                komaImg15.image = UIImage(named : r_komaImageIndex[(x * -1) - 1])
+            }
+            else if boardMatrix[4][2] == 0 {komaImg15.image = UIImage(named : "koma2.png")}
+            //----
+            if  boardMatrix[5][0] == x {
+                komaImg16.image = UIImage(named : r_komaImageIndex[(x * -1) - 1])
+            }
+            else if boardMatrix[5][0] == 0 {komaImg16.image = UIImage(named : "koma2.png")}
+            if boardMatrix[5][1] == x {
+                komaImg17.image = UIImage(named : r_komaImageIndex[(x * -1) - 1])
+            }
+            else if boardMatrix[5][1] == 0 {komaImg17.image = UIImage(named : "koma2.png")}
+            if boardMatrix[5][2] == x {
+                komaImg18.image = UIImage(named : r_komaImageIndex[(x * -1) - 1])
+            }
+            else if boardMatrix[5][2] == 0 {komaImg18.image = UIImage(named : "koma2.png")}
+            //----
+            if boardMatrix[6][0] == x {
+                komaImg19.image = UIImage(named : r_komaImageIndex[(x * -1) - 1])
+            }
+            else if boardMatrix[6][0] == 0 {komaImg19.image = UIImage(named : "koma2.png")}
+            if boardMatrix[6][1] == x {
+                komaImg20.image = UIImage(named : r_komaImageIndex[(x * -1) - 1])
+            }
+            else if boardMatrix[6][1] == 0 {komaImg20.image = UIImage(named : "koma2.png")}
+            if boardMatrix[6][2] == x {
+                komaImg21.image = UIImage(named : r_komaImageIndex[(x * -1) - 1])
+            }
+            else if boardMatrix[6][2] == 0 {komaImg21.image = UIImage(named : "koma2.png")}
+            //----
+            if  boardMatrix[7][0] == x {
+                komaImg22.image = UIImage(named : r_komaImageIndex[(x * -1) - 1])
+            }
+            else if boardMatrix[7][0] == 0 {komaImg22.image = UIImage(named : "koma2.png")}
+            if boardMatrix[7][1] == x {
+                komaImg23.image = UIImage(named : r_komaImageIndex[(x * -1) - 1])
+            }
+            else if boardMatrix[7][1] == 0 {komaImg23.image = UIImage(named : "koma2.png")}
+            if  boardMatrix[7][2] == x {
+                komaImg24.image = UIImage(named : r_komaImageIndex[(x * -1) - 1])
             }
             else if boardMatrix[7][2] == 0 {komaImg24.image = UIImage(named : "koma2.png")}
             //----
